@@ -7,7 +7,7 @@
 body{
     background: white;
     overflow: hidden auto;
-    font-family: 'Poppins', sans-serif;;
+    font-family: 'Poppins', sans-serif;
 }
 
 .nav{
@@ -16,6 +16,7 @@ body{
     align-items: center;
     margin-left: auto;
     margin-right: auto;
+    max-width: 1980px;
 }
 
 .logo{
@@ -37,6 +38,9 @@ ul{
 
 #content {
     transition: 0.4s cubic-bezier(.615 , .19, .305, .91);
+    max-width: 1980px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .menu{

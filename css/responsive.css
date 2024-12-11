@@ -187,6 +187,11 @@
         font-size: 100px;
     }
 
+    .data-en {
+        min-height: 650px;
+        max-height: 850px;
+    }
+
     .topic-text h1{
         text-align: center;
         font-size: 100px;
@@ -228,6 +233,10 @@
     .text-3 p {
         font-size: 50px;
     }
+
+    .data-en {
+        min-height: 700px;
+    }
 }
 
 @media (min-width: 1536px) {
@@ -251,6 +260,10 @@
     .fav-project-text {
         font-size: calc(2rem);
     }
+
+    .data-en {
+        height: 750px;
+    }
 }
 
 @media (min-width: 1800px) {
@@ -258,4 +271,15 @@
         top: 2.5%;
         left: 4%;
     }
+
+    .data-en {
+        height: 800px;
+    }
+}
+
+@media (min-width: 1980px) {
+    .logo a{
+        left: calc((100vw - 1800px)/2);
+    }
+
 }
