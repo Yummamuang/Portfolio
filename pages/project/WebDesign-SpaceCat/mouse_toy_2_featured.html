@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- =============== Titile =============== -->
+    <title>หนูปลอม แบบที่ 2 | SpaceCat</title>
+
+    <!-- =============== icon =============== -->
+    <link rel="shortcut icon" href="./ico/logo_black.svg">
+
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/product.css">
+    <link rel="stylesheet" href="./css/output.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+
+    <!-- ======= FontAwesome & Google font ======= -->
+    <link rel="stylesheet" href="./ico/fontAwesome/css/all.css">
+    <link rel="stylesheet" href="./ico/fontAwesome/css/sharp-regular.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,400;0,500;0,600;0,700;1,700&family=Readex+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body id="body" style="background: var(--gray-light);">
+
+    <!-- ================================================= Loader Page ================================================= -->
+    <div class="loader-wrap">
+        <div class="fixed z-50 overflow-hidden top-0 left-0 w-full" id="loader">
+            <div class="loading flex justify-center items-center">
+                <div id="logo-loading" class="z-10 w-20">
+                    <img src="./img/logo_white.svg" alt="Space Cat logo" class="w-full" id="logo-loading-image">
+                </div>
+                <div class="loading-title absolute">
+                    <div class="letter-load opacity-50 flex justify-center overflow-hidden z-0">
+                        <div class="m letter-load-text">M</div>
+                        <div class="e letter-load-text">E</div>
+                        <div class="o letter-load-text">O</div>
+                        <div class="w letter-load-text">W</div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>
+
+    <!-- ================================================= Loader to Another Page ================================================= -->
+    <div class="loader-wrap">
+        <div class="fixed top-0 z-30 overflow-hidden" id="loader-another-page"></div>  
+    </div>
+
+    <!-- ================================================= Header ================================================= -->
+    <div class="header lg:p-6 z-20" id="header">
+
+        <!-- =============== Nav =============== -->
+        <div class="nav p-4 md:p-6 lg:p-0 flex z-20" id="navbar">
+
+            <!-- =============== Logo =============== -->
+            <div class="cursor-pointer z-40" title="Space Cat logo" onclick="loadToPage('home')">
+                <div class="logo w-6 sm:w-10 h-4 fixed lg:left-12" id="logo">
+                    <div class="image relative z-20 ">
+                        <img src="./img/logo_black.svg" alt="Space Cat logo" class="absolute w-full" id="logo-black">
+                        <img src="./img/logo_white.svg" alt="Space Cat logo" class="absolute w-full" id="logo-white">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- =============== Menu text for Lapptop & PC =============== -->
+            <div class="ml-auto hidden lg:flex items-center overflow-y-hidden z-20" id="featured&categories">
+                <ul class="flex">
+                    <li class="z-20 flex items-center">
+                        <div class="cursor-pointer relative" onclick="loadToPage('featured')" id="featured-pc">
+                            <span class="navbar-text p-1 text-2xl">แนะนำ</span>
+                        </div>
+                    </li>
+                    <li class="menu-categories-main z-10 mr-28">
+                        <div class="z-20 flex items-center ml-24 mr-48 cursor-pointer relative" id="categories-pc" onclick="showCategoriesToggle()">
+                            <span class="navbar-text p-1 text-2xl">หมวดหมู่</span>
+                            <i class="fa-sharp fa-regular fa-arrow-down fa-xl" id="down-arrow-pc"></i>
+                        </div>
+                        <ul class="fixed right-0 top-0 text-right text-xl -z-10 w-full overflow-x-hidden" id="menu-categories-show" >
+                            <li class="menu-lv2-sub mt-28 mr-10 p-3 relative overflow-hidden cursor-pointer">
+                                <div class="menu-lv2-" onclick="pelletFoodShowToggle()" id="pellet-food-pc" onmouseover="catSleepShow()" onmouseout="catSleepClose()">
+                                    <span class="text-8xl menu-lv2-">อาหารเม็ด</span>
+                                    <i class="fa-sharp fa-regular fa-arrow-down text-8xl ml-1 align-bottom"></i>
+                                </div>
+                                <ul class="pellet-food-show text-base -translate-x-6" id="pellet-food-show">
+                                    <li class="overflow-hidden p-2 text-lv3-pc cursor-pointer" onclick="loadToPage('1to12_month')" onmouseover="catSleepShow()" onmouseout="catSleepClose()">
+                                        <span class="text-6xl menu-lv3- pellet-lv3">1 - 12 เดือน</span>
+                                        <i class="fa-sharp fa-regular fa-arrow-turn-down-left text-6xl ml-1 align-bottom"></i>
+                                    </li>
+                                    <li class="overflow-hidden p-2 text-lv3-pc cursor-pointer" onclick="loadToPage('1year_up')" onmouseover="catSleepShow()" onmouseout="catSleepClose()">
+                                        <span class="text-6xl menu-lv3- pellet-lv3">1 ปีขึ้นไป</span>
+                                        <i class="fa-sharp fa-regular fa-arrow-turn-down-left text-6xl ml-1 align-bottom"></i>
+                                    </li>
+                                    <li class="overflow-hidden p-2 text-lv3-pc cursor-pointer" onclick="loadToPage('7year_up_pellet')" onmouseover="catSleepShow()" onmouseout="catSleepClose()">
+                                        <span class="text-6xl menu-lv3- pellet-lv3">7 ปีขึ้นไป</span>
+                                        <i class="fa-sharp fa-regular fa-arrow-turn-down-left text-6xl ml-1 align-bottom"></i>
+                                    </li>
+                                    <li class="overflow-hidden p-2 text-lv3-pc cursor-pointer" onclick="loadToPage('nourish_health_pellet')" onmouseover="catSleepShow()" onmouseout="catSleepClose()">
+                                        <span class="text-6xl menu-lv3- pellet-lv3">บำรุงสุขภาพ</span>
+                                        <i class="fa-sharp fa-regular fa-arrow-turn-down-left text-6xl ml-1 align-bottom"></i>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-lv2-sub mr-10 p-3 relative overflow-hidden cursor-pointer">
+                                <div class="menu-lv2-" onclick="wetFoodShowToggle()" id="wet-food-pc" onmouseover="catSleepShow()" onmouseout="catSleepClose()">
+                                    <span class="text-8xl">อาหารเปียก</span>
+                                    <i class="fa-sharp fa-regular fa-arrow-down text-8xl ml-1 align-bottom"></i>
+                                </div>
+                                <ul class="wet-food-show text-base -translate-x-6" id="wet-food-show">
+                                    <li class="overflow-hidden p-2 text-lv3-pc cursor-pointer" onclick="loadToPage('more_than6month_wet')" onmouseover="catSleepShow()" onmouseout="catSleepClose()">
+                                        <span class="text-6xl menu-lv3- wet-lv3">มากกว่า 6 เดือน</span>
+                                        <i class="fa-sharp fa-regular fa-arrow-turn-down-left text-6xl ml-1 align-bottom"></i>
+                                    </li>
+                                    <li class="overflow-hidden p-2 text-lv3-pc cursor-pointer" onclick="loadToPage('7year_up_wet')" onmouseover="catSleepShow()" onmouseout="catSleepClose()">
+                                        <span class="text-6xl menu-lv3- wet-lv3">7 ปีขึ้นไป</span>
+                                        <i class="fa-sharp fa-regular fa-arrow-turn-down-left text-6xl ml-1 align-bottom"></i>
+                                    </li>
+                                    <li class="overflow-hidden p-2 text-lv3-pc cursor-pointer" onclick="loadToPage('nourish_health_wet')" onmouseover="catSleepShow()" onmouseout="catSleepClose()">
+                                        <span class="text-6xl menu-lv3- wet-lv3">บำรุงสุขภาพ</span>
+                                        <i class="fa-sharp fa-regular fa-arrow-turn-down-left text-6xl ml-1 align-bottom"></i>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="mr-10 menu-lv2-sub overflow-hidden p-3 cursor-pointer" onclick="loadToPage('freeze_dried_food')" onmouseover="catSleepShow()" onmouseout="catSleepClose()">
+                                <div class="menu-lv2-">
+                                    <span class="text-8xl translate-y-96">อาหารฟรีซดราย</span>
+                                    <i class="fa-sharp fa-regular fa-arrow-turn-down-left text-7xl ml-1 align-bottom"></i>
+                                </div>
+                            </li>
+                            <li class="mr-10 menu-lv2-sub overflow-hidden p-3 cursor-pointer" onclick="loadToPage('toy')" onmouseover="catSleepShow()" onmouseout="catSleepClose()">
+                                <div class="menu-lv2-">
+                                    <span class="text-8xl">ของเล่น</span>
+                                    <i class="fa-sharp fa-regular fa-arrow-turn-down-left text-7xl ml-1 align-bottom"></i>
+                                </div>
+                            </li>
+                            <li class="mr-10 menu-lv2-sub overflow-hidden p-3 cursor-pointer" onclick="loadToPage('cat_house')" onmouseover="catSleepShow()" onmouseout="catSleepClose()">
+                                <div class="menu-lv2-">
+                                    <span class="text-8xl">ที่อยู่อาศัย</span>
+                                    <i class="fa-sharp fa-regular fa-arrow-turn-down-left text-7xl ml-1 align-bottom"></i>
+                                </div>
+                            </li>
+                            <li class="mr-10 menu-lv2-sub overflow-hidden p-3 cursor-pointer mb-60" onclick="loadToPage('compare_food')" onmouseover="catSleepShow()" onmouseout="catSleepClose()">
+                                <div class="menu-lv2-">
+                                    <span class="text-8xl">อาหารแบบไหนดี</span>
+                                    <i class="fa-sharp fa-regular fa-arrow-turn-down-left text-7xl ml-1 align-bottom"></i>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="./img/space_cat_sleep.svg" alt="Space Cat Sleep" class="space_cat_sleep absolute">
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+
+            <!-- =============== Menu line for Mobile =============== -->
+            <div class="menu-mobile fixed mx-auto  flex items-center lg:hidden z-20 " id="menu-collapse" onclick="toggleMenuMobile()" >
+                <div class="open-menu" title="Open Menu">
+                    <div class="deco-menu relative w-5 h-3 md:w-8 md:h-4 m-3" id="line-menu">
+                        <span class="line-menu" id="line-menu-1"></span>
+                        <span class="line-menu" id="line-menu-1/2"></span>
+                        <span class="line-menu" id="line-menu-2"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =============== Menu line and Cart for Lapptop & PC =============== -->
+            <div class="wrap-menu-line-cart fixed right-6 z-20" id="wrap-menu-line-cart">
+                <div class="flex">
+                    <!-- =============== Menu line for Lapptop & PC =============== -->
+                    <div class="menu-pc hidden lg:flex lg:mr-24 items-center w-auto h-auto z-20 cursor-pointer" id="menu-collapse-pc" onclick="toggleMenuPC()">
+                        <div class="open-menu-pc relative p-1" id="menu_pc">
+                            <span class="navbar-text p-1 text-2xl">เมนู</span>
+                            <i class="fa-sharp fa-regular fa-arrow-down fa-xl" id="down-arrow-pc_"></i>
+                        </div>
+                    </div>
+
+                    <!-- =============== Cart =============== -->
+                    <div class="cart-wrap" onclick="loadToPage('cart')">
+                        <div class="dot absolute"></div>
+                        <i class="fa-light fa-cart-shopping lg:text-3xl absolute" title="shopping cart" id="cart"></i>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- =============== When Click Menu for Mobile =============== -->
+        <div class="wrap-menu overflow-x-hidden mx-auto top-0 fixed z-20" id="menu-mobile-wrap" style="display: none;">
+            <ul class="menu menu-mobile-lv-1 text-right m-2 mt-12 md:mt-16 mr-5" id="menu-mobile">
+                <li><div id="featured" onclick="loadToPage('featured')"><div class="menu-items-lv1">แนะนำ</div></div></li>
+                <li>
+                    <button class="menu-items-lv1" onclick="toggleMenuMobileLv2()" type="button" id="bt-menu-mobile-lv-1"><span id="categories">หมวดหมู่</span><img src="./img/arrow.svg" class="material-symbols-outlined down-left-arrow-lv1 inline" alt="..." style="transform: rotate(45deg);"></button>
+                    <ul class="menu menu-mobile-lv-2" id="menu-mobile-lv-2">
+                        <li>
+                            <button type="button" onclick="toggleMenuMobileLv3First()" id="bt-menu-mobile-lv-3-first" class="mr-3"><span id="Pellet-food">อาหารเม็ด</span><img src="./img/arrow.svg" class="material-symbols-outlined down-left-arrow-lv2 inline" alt="..." style="transform: rotate(45deg);"></button>
+                            <ul class="menu menu-mobile-lv-3" id="menu-mobile-lv-3-first">
+                                <li><div onclick="loadToPage('1to12_month')" id="1-to-12-month" class="mr-6">1 - 12 เดือน</div></li>
+                                <li><div onclick="loadToPage('1year_up_pellet')" id="1-year-up" class="mr-6">1 ปีขึ้นไป</div></li>
+                                <li><div onclick="loadToPage('7year_up_pellet')" class="7-year-up mr-6">7 ปีขึ้นไป</div></li>
+                                <li><div onclick="loadToPage('nourish_health_pellet')" class="nourish-health mr-6">บำรุงสุขภาพ</div></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <button type="button" onclick="toggleMenuMobileLv3Second()" id="bt-menu-mobile-lv-3-second" class="mr-3"><span id="wet-food">อาหารเปียก</span><img src="./img/arrow.svg" class="material-symbols-outlined down-left-arrow-lv2 inline" alt="..." style="transform: rotate(45deg);"></button>
+                            <ul class="menu menu-mobile-lv-3" id="menu-mobile-lv-3-second">
+                                <li><div onclick="loadToPage('more_than6month_wet')" class="mr-6">มากกว่า 6 เดือน</div></li>
+                                <li><div onclick="loadToPage('7year_up_wet')" class="7-year-up mr-6">7 ปีขึ้นไป</div></li>
+                                <li><div onclick="loadToPage('nourish_health_wet')" class="nourish-health mr-6">บำรุงสุขภาพ</div></li>
+                            </ul>
+                        </li>
+                        <li><div onclick="loadToPage('freeze_dried_food')" class="mr-3"><span id="freeze-dried-food">อาหารฟรีซดราย</span></div></li>
+                        <li><div onclick="loadToPage('toy')" class="mr-3"><span id="toy">ของเล่น</span></div></li>
+                        <li><div onclick="loadToPage('cat_house')" class="mr-3"><span id="cat-house">ที่อยู่อาศัย</span></div></li>
+                    </ul>
+                </li>
+                <li><div id="account" onclick="loadToPage('login')"><div class="menu-items-lv1" id="account-text">บัญชี</div></div></li>
+                <li><div id="contact" onclick="loadToPage('contact')"><div class="menu-items-lv1" id="contact-text">ติดต่อ</div></div></li>
+                <li><div id="news" onclick="loadToPage('news')"><div class="menu-items-lv1" id="news-text">ข่าวสาร</div></div></li>
+                <li><div id="promotion" onclick="loadToPage('promotion')"><div class="menu-items-lv1" id="prmotion-text">โปรโมชั่น</div></div></li>
+                <li id="buttom-menu"><div id="about-us" onclick="loadToPage('about_us')"><div class="menu-items-lv1" id="about-us-text">เกี่ยวกับเรา</div></div></li>
+                <li><div id="qAndA" onclick="loadToPage('q_and_a')"><div class="menu-items-lv1" id="qa-text">คำถามที่พบบ่อย</div></div></li>
+                <li><div id="compare_food" onclick="loadToPage('compare_food')"><div class="menu-items-lv1" id="compare_food_text">อาหารแบบไหนดี</div></div></li>
+            </ul>
+            <img src="./img/space_cat_swim.svg" alt="Space Cat Swiming" class="block mx-auto w-3/4">
+        </div>
+        
+        <!-- =============== When Click Menu for PC =============== -->
+        <div class="wrap-menu-pc fixed right-0 top-0 text-right text-xl z-10 w-full overflow-x-hidden" id="menu-pc-wrap">
+            <img src="./img/space_cat_swim.svg" alt="Space Cat Swiming" class="space_cat_swim absolute">
+            <ul class="" >
+                <li class="overflow-hidden mt-28 mr-10 p-3 cursor-pointer li-menu-items-pc" onmouseover="catSwimShow()" onmouseout="catSwimClose()">
+                    <div onclick="loadToPage('login')" class="menu-items-pc">
+                        <span class="text-8xl p-2">บัญชี</span>
+                        <i class="fa-sharp fa-regular fa-arrow-turn-down-left text-7xl ml-1 align-bottom"></i>
+                    </div>
+                </li>
+                <li class="overflow-hidden mr-10 p-3 cursor-pointer li-menu-items-pc" onmouseover="catSwimShow()" onmouseout="catSwimClose()">
+                    <div onclick="loadToPage('contact')" class="menu-items-pc">
+                        <span class="text-8xl p-2">ติดต่อ</span>
+                        <i class="fa-sharp fa-regular fa-arrow-turn-down-left text-7xl ml-1 align-bottom"></i>
+                    </div>
+                </li>
+                <li class="overflow-hidden mr-10 p-3 cursor-pointer li-menu-items-pc" onmouseover="catSwimShow()" onmouseout="catSwimClose()">
+                    <div onclick="loadToPage('news')" class="menu-items-pc">
+                        <span class="text-8xl p-2">ข่าวสาร</span>
+                        <i class="fa-sharp fa-regular fa-arrow-turn-down-left text-7xl ml-1 align-bottom"></i>
+                    </div>
+                </li>
+                <li class="overflow-hidden mr-10 p-3 cursor-pointer li-menu-items-pc" onmouseover="catSwimShow()" onmouseout="catSwimClose()">
+                    <div onclick="loadToPage('promotion')" class="menu-items-pc">
+                        <span class="text-8xl p-2">โปรโมชั่น</span>
+                        <i class="fa-sharp fa-regular fa-arrow-turn-down-left text-7xl ml-1 align-bottom"></i>
+                    </div>
+                </li>
+                <li class="overflow-hidden mr-10 p-3 cursor-pointer li-menu-items-pc" onmouseover="catSwimShow()" onmouseout="catSwimClose()">
+                    <div onclick="loadToPage('about_us')" class="menu-items-pc">
+                        <span class="text-8xl p-2">เกี่ยวกับเรา</span>
+                        <i class="fa-sharp fa-regular fa-arrow-turn-down-left text-7xl ml-1 align-bottom"></i>
+                    </div>
+                </li>
+                <li class="overflow-hidden mr-10 p-3 cursor-pointer li-menu-items-pc" onmouseover="catSwimShow()" onmouseout="catSwimClose()">
+                    <div onclick="loadToPage('q_and_a')" class="menu-items-pc">
+                        <span class="text-8xl p-2">คำถามที่พบบ่อย</span>
+                        <i class="fa-sharp fa-regular fa-arrow-turn-down-left text-7xl ml-1 align-bottom"></i>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+    <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Header ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^  -->
+
+
+    <!-- ================================================= Content ================================================= -->
+    <div id="content" class="px-6 sm:px-8 pb-10 lg:px-14">
+
+        <div class="text-center mt-4 breadcump md:text-right md:pr-16 md:text-base">
+            <span><a href="./home.html">home</a> </span>/ <a href="./featured.html">ของเล่น</a> / <span class="un_active_bc">หนูปลอม แบบที่ 2</span>
+        </div>
+
+        <div class="overflow-hidden text-center mt-10 lg:text-right lg:mb-10">
+            <i class="fa-solid fa-star sub-header-page fa_star" style="transform: translate(-10%,-20%);"></i>
+            <span class="header-page">ของเล่น</span>
+        </div>
+
+        <div class="overflow-hidden text-center mb-10 lg:hidden">
+            <div class="sub-header-page">หนูปลอม แบบที่ 2</div>
+        </div>
+
+        <!-- =================== Mobile =================== -->
+        <div class="product-detail-mobile lg:hidden">
+
+            <div class="product-image-wrap">
+                <div class="product-image">
+                    <img src="./img/toys/mouse_toy_2.jpg" alt="หนูปลอม แบบที่ 2">
+                </div>
+            </div>
+
+            <div class="button_add_to_cart-wrap mt-4">
+                <div class="button_add_to_cart px-4 py-2 flex justify-between items-center">
+                    <div class="add_value_product flex items-center">
+                        <i class="fa-solid fa-circle-minus mr-2 mt-1 minus cursor-pointer" onclick="increment()"></i>
+                        <div class="value-product" id="value">1</div>
+                        <i class="fa-solid fa-circle-plus ml-2 mt-1 minus cursor-pointer" onclick="decrement()"></i>
+                    </div>
+                    <div class="value-product ml-4">99 ฿</div>
+                    <div class="overflow-hidden relative ml-4">
+                        <button type="button" onclick="addtoCart('0')" class="addtoCartText"><span>เพิ่มไปยังรถเข็น</span></button>
+                        <i class="fa-sharp fa-regular fa-check absolute"></i>
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="info_wrap mt-4">
+                <div class="description text-xl sm:text-2xl md:text-3xl md:mt-6">
+                    รายละเอียดสินค้า
+                </div>
+                <div class="info mt-1 sm:text-xl">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error inventore natus iste obcaecati soluta quae, eos voluptatibus, quis fugiat eveniet quo? Laborum, ab nihil! Ad quaerat numquam dolore voluptatem ducimus.
+                </div>
+            </div>
+        </div>
+        
+        <!-- =================== Pc & Laptop =================== -->
+        <div class="product-detail-pc hidden gap-10 lg:grid grid-cols-4 place-content-center">
+            <div class="info_wrap">
+                <div class="description text-2xl xl:text-3xl">
+                    รายละเอียดสินค้า
+                </div>
+                <div class="info mt-2 lg:text-base xl:text-lg">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error inventore natus iste obcaecati soluta quae, eos voluptatibus, quis fugiat eveniet quo? Laborum, ab nihil! Ad quaerat numquam dolore voluptatem ducimus. <br> <br>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta sit temporibus, consectetur repellat asperiores minima vel molestiae quidem culpa quis alias inventore quasi tempore. Assumenda iste reprehenderit et itaque doloremque.
+                </div>
+            </div>
+
+            <div class="product-image-wrap col-span-2 lg:mx-4">
+                <div class="product-image mx-auto">
+                    <img src="./img/toys/mouse_toy_2.jpg" alt="หนูปลอม แบบที่ 2">
+                </div>
+            </div>
+
+            <div class="button_add_to_cart-wrap">
+
+                <div class="overflow-hidden mb-10">
+                    <div class="sub-header-page-lg">หนูปลอม แบบที่ 2</div>
+                </div>
+
+                <div class="button_add_to_cart px-4 py-2 flex justify-between items-center">
+                    <div class="add_value_product flex items-center">
+                        <i class="fa-solid fa-circle-minus mr-2 mt-1 minus cursor-pointer" onclick="increment()"></i>
+                        <div class="value-product" id="value_">1</div>
+                        <i class="fa-solid fa-circle-plus ml-2 mt-1 minus cursor-pointer" onclick="decrement()"></i>
+                    </div>
+                    <div class="value-product ml-4">99 ฿</div>
+                    <div class="overflow-hidden relative ml-4">
+                        <button type="button" onclick="addtoCart('1')" class="addtoCartText"><span>เพิ่มไปยังรถเข็น</span></button>
+                        <i class="fa-sharp fa-regular fa-check absolute"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ================================================= Script ================================================= -->
+
+    <!-- =============== Script for Preloading =============== -->
+    <script src="./js/loading_page.js"></script>
+
+    <!-- =============== Script for Load to another page =============== -->
+    <script src="./js/loading_to_another_page.js"></script>
+
+    <!-- =============== Script for Mobile Menu =============== -->
+    <script src="./js/menu_mobile.js"></script>
+
+    <!-- =============== Script for PC Menu =============== -->
+    <script src="./js/menu_pc.js"></script>
+    
+    <!-- =============== Script for responsive =============== -->
+    <script src="./js/responsive.js"></script>
+
+    <!-- =============== Script for product page =============== -->
+    <script src="./js/product_page.js"></script>
+
+    <!-- =============== Script for footer page =============== -->
+    <script src="./js/footer.js"></script>
+    
+    <!-- =============== Set Variable Script =============== -->
+    <script type="text/javascript" src="./js/variable.js"></script>
+</body>
+</html>

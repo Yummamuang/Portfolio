@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- =============== Titile =============== -->
+    <title>Home | SpaceCat</title>
+
+    <!-- =============== icon =============== -->
+    <link rel="shortcut icon" href="./ico/logo_black.svg">
+
+    <!-- =============== Stylesheet =============== -->
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/output.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+
+    <!-- ======= FontAwesome & Google font ======= -->
+    <link rel="stylesheet" href="./ico/fontAwesome/css/all.css">
+    <link rel="stylesheet" href="./ico/fontAwesome/css/sharp-regular.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,400;0,500;0,600;0,700;1,700&family=Readex+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body id="body">
+
+    <!-- ================================================= Loader Page ================================================= -->
+    <div class="loader-wrap">
+        <div class="fixed z-50 overflow-hidden top-0 left-0 w-full" id="loader">
+            <div class="loading flex justify-center items-center">
+                <div id="logo-loading" class="z-10 w-20">
+                    <img src="./img/logo_white.svg" alt="Space Cat logo" class="w-full" id="logo-loading-image">
+                </div>
+                <div class="loading-title absolute">
+                    <div class="letter-load opacity-50 flex justify-center overflow-hidden z-0">
+                        <div class="m letter-load-text">M</div>
+                        <div class="e letter-load-text">E</div>
+                        <div class="o letter-load-text">O</div>
+                        <div class="w letter-load-text">W</div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>
+
+    <!-- ================================================= Loader to Another Page ================================================= -->
+    <div class="loader-wrap">
+        <div class="fixed top-0 z-30 overflow-hidden" id="loader-another-page"></div>  
+    </div>
+
+    <!-- ================================================= Header ================================================= -->
+    <div class="header lg:p-6 z-20" id="header">
+
+        <!-- =============== Nav =============== -->
+        <div class="nav p-4 md:p-6 lg:p-0 flex z-20" id="navbar">
+
+            <!-- =============== Logo =============== -->
+            <div class="cursor-pointer z-40" title="Space Cat logo">
+                <div class="logo w-6 sm:w-10 h-4 fixed lg:left-12" id="logo">
+                    <div class="image relative z-20 ">
+                        <img src="./img/logo_black.svg" alt="Space Cat logo" class="absolute w-full" id="logo-black">
+                        <img src="./img/logo_white.svg" alt="Space Cat logo" class="absolute w-full" id="logo-white">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- =============== Menu text for Lapptop & PC =============== -->
+            <div class="ml-auto hidden lg:flex items-center overflow-y-hidden z-20" id="featured&categories">
+                <ul class="flex">
+                    <li class="z-20 flex items-center">
+                        <div class="cursor-pointer relative" onclick="loadToPage('featured')" id="featured-pc">
+                            <span class="navbar-text p-1 text-2xl">แนะนำ</span>
+                        </div>
+                    </li>
+                    <li class="menu-categories-main z-10 mr-28">
+                        <div class="z-20 flex items-center ml-24 mr-52 cursor-pointer relative" id="categories-pc" onclick="showCategoriesToggle()">
+                            <span class="navbar-text p-1 text-2xl">หมวดหมู่</span>
+                            <i class="fa-sharp fa-regular fa-arrow-down fa-xl" id="down-arrow-pc"></i>
+                        </div>
+                        <ul class="fixed right-0 top-0 text-right text-xl -z-10 w-full overflow-x-hidden" id="menu-categories-show" >
+                            <li class="menu-lv2-sub mt-28 mr-10 p-3 relative overflow-hidden cursor-pointer">
+                                <div class="menu-lv2-" onclick="pelletFoodShowToggle()" id="pellet-food-pc" onmouseover="catSleepShow()" onmouseout="catSleepClose()">
+                                    <span class="text-8xl menu-lv2-">อาหารเม็ด</span>
+                                    <i class="fa-sharp fa-regular fa-arrow-down text-8xl ml-1 align-bottom"></i>
+                                </div>
+                                <ul class="pellet-food-show text-base -translate-x-6" id="pellet-food-show">
+                                    <li class="overflow-hidden p-2 text-lv3-pc cursor-pointer" onclick="loadToPage('1to12_month')" onmouseover="catSleepShow()" onmouseout="catSleepClose()">
+                                        <span class="text-6xl menu-lv3- pellet-lv3">1 - 12 เดือน</span>
+                                        <i class="fa-sharp fa-regular fa-arrow-turn-down-left text-6xl ml-1 align-bottom"></i>
+                                    </li>
+                                    <li class="overflow-hidden p-2 text-lv3-pc cursor-pointer" onclick="loadToPage('1year_up')" onmouseover="catSleepShow()" onmouseout="catSleepClose()">
+                                        <span class="text-6xl menu-lv3- pellet-lv3">1 ปีขึ้นไป</span>
+                                        <i class="fa-sharp fa-regular fa-arrow-turn-down-left text-6xl ml-1 align-bottom"></i>
+                                    </li>
+                                    <li class="overflow-hidden p-2 text-lv3-pc cursor-pointer" onclick="loadToPage('7year_up_pellet')" onmouseover="catSleepShow()" onmouseout="catSleepClose()">
+                                        <span class="text-6xl menu-lv3- pellet-lv3">7 ปีขึ้นไป</span>
+                                        <i class="fa-sharp fa-regular fa-arrow-turn-down-left text-6xl ml-1 align-bottom"></i>
+                                    </li>
+                                    <li class="overflow-hidden p-2 text-lv3-pc cursor-pointer" onclick="loadToPage('nourish_health_pellet')" onmouseover="catSleepShow()" onmouseout="catSleepClose()">
+                                        <span class="text-6xl menu-lv3- pellet-lv3">บำรุงสุขภาพ</span>
+                                        <i class="fa-sharp fa-regular fa-arrow-turn-down-left text-6xl ml-1 align-bottom"></i>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-lv2-sub mr-10 p-3 relative overflow-hidden cursor-pointer">
+                                <div class="menu-lv2-" onclick="wetFoodShowToggle()" id="wet-food-pc" onmouseover="catSleepShow()" onmouseout="catSleepClose()">
+                                    <span class="text-8xl">อาหารเปียก</span>
+                                    <i class="fa-sharp fa-regular fa-arrow-down text-8xl ml-1 align-bottom"></i>
+                                </div>
+                                <ul class="wet-food-show text-base -translate-x-6" id="wet-food-show">
+                                    <li class="overflow-hidden p-2 text-lv3-pc cursor-pointer" onclick="loadToPage('more_than6month_wet')" onmouseover="catSleepShow()" onmouseout="catSleepClose()">
+                                        <span class="text-6xl menu-lv3- wet-lv3">มากกว่า 6 เดือน</span>
+                                        <i class="fa-sharp fa-regular fa-arrow-turn-down-left text-6xl ml-1 align-bottom"></i>
+                                    </li>
+                                    <li class="overflow-hidden p-2 text-lv3-pc cursor-pointer" onclick="loadToPage('7year_up_wet')" onmouseover="catSleepShow()" onmouseout="catSleepClose()">
+                                        <span class="text-6xl menu-lv3- wet-lv3">7 ปีขึ้นไป</span>
+                                        <i class="fa-sharp fa-regular fa-arrow-turn-down-left text-6xl ml-1 align-bottom"></i>
+                                    </li>
+                                    <li class="overflow-hidden p-2 text-lv3-pc cursor-pointer" onclick="loadToPage('nourish_health_wet')" onmouseover="catSleepShow()" onmouseout="catSleepClose()">
+                                        <span class="text-6xl menu-lv3- wet-lv3">บำรุงสุขภาพ</span>
+                                        <i class="fa-sharp fa-regular fa-arrow-turn-down-left text-6xl ml-1 align-bottom"></i>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="mr-10 menu-lv2-sub overflow-hidden p-3 cursor-pointer" onclick="loadToPage('freeze_dried_food')" onmouseover="catSleepShow()" onmouseout="catSleepClose()">
+                                <div class="menu-lv2-">
+                                    <span class="text-8xl translate-y-96">อาหารฟรีซดราย</span>
+                                    <i class="fa-sharp fa-regular fa-arrow-turn-down-left text-7xl ml-1 align-bottom"></i>
+                                </div>
+                            </li>
+                            <li class="mr-10 menu-lv2-sub overflow-hidden p-3 cursor-pointer" onclick="loadToPage('toy')" onmouseover="catSleepShow()" onmouseout="catSleepClose()">
+                                <div class="menu-lv2-">
+                                    <span class="text-8xl">ของเล่น</span>
+                                    <i class="fa-sharp fa-regular fa-arrow-turn-down-left text-7xl ml-1 align-bottom"></i>
+                                </div>
+                            </li>
+                            <li class="mr-10 menu-lv2-sub overflow-hidden p-3 cursor-pointer" onclick="loadToPage('cat_house')" onmouseover="catSleepShow()" onmouseout="catSleepClose()">
+                                <div class="menu-lv2-">
+                                    <span class="text-8xl">ที่อยู่อาศัย</span>
+                                    <i class="fa-sharp fa-regular fa-arrow-turn-down-left text-7xl ml-1 align-bottom"></i>
+                                </div>
+                            </li>
+                            <li class="mr-10 menu-lv2-sub overflow-hidden p-3 cursor-pointer mb-60" onclick="loadToPage('compare_food')" onmouseover="catSleepShow()" onmouseout="catSleepClose()">
+                                <div class="menu-lv2-">
+                                    <span class="text-8xl">อาหารแบบไหนดี</span>
+                                    <i class="fa-sharp fa-regular fa-arrow-turn-down-left text-7xl ml-1 align-bottom"></i>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="./img/space_cat_sleep.svg" alt="Space Cat Sleep" class="space_cat_sleep absolute">
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+
+            <!-- =============== Menu line for Mobile =============== -->
+            <div class="menu-mobile fixed mx-auto  flex items-center lg:hidden z-20 " id="menu-collapse" onclick="toggleMenuMobile()" >
+                <div class="open-menu" title="Open Menu">
+                    <div class="deco-menu relative w-5 h-3 md:w-8 md:h-4 m-3" id="line-menu">
+                        <span class="line-menu" id="line-menu-1"></span>
+                        <span class="line-menu" id="line-menu-1/2"></span>
+                        <span class="line-menu" id="line-menu-2"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =============== Menu line and Cart for Lapptop & PC =============== -->
+            <div class="wrap-menu-line-cart fixed right-6 z-20" id="wrap-menu-line-cart">
+                <div class="flex">
+                    <!-- =============== Menu line for Lapptop & PC =============== -->
+                    <div class="menu-pc hidden lg:flex lg:mr-24 items-center w-auto h-auto z-20 cursor-pointer" id="menu-collapse-pc" onclick="toggleMenuPC()">
+                        <div class="open-menu-pc relative p-1" id="menu_pc">
+                            <span class="navbar-text p-1 text-2xl">เมนู</span>
+                            <i class="fa-sharp fa-regular fa-arrow-down fa-xl" id="down_arrow_pc"></i>
+                        </div>
+                    </div>
+
+                    <!-- =============== Cart =============== -->
+                    <div class="cart-wrap" onclick="loadToPage('cart')">
+                        <div class="dot absolute"></div>
+                        <i class="fa-light fa-cart-shopping lg:text-3xl absolute" title="shopping cart" id="cart"></i>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- =============== When Click Menu for Mobile =============== -->
+        <div class="wrap-menu overflow-x-hidden mx-auto top-0 fixed z-20" id="menu-mobile-wrap" style="display: none;">
+            <ul class="menu menu-mobile-lv-1 text-right m-2 mt-12 md:mt-16 mr-5" id="menu-mobile">
+                <li><div id="featured" onclick="loadToPage('featured')"><div class="menu-items-lv1">แนะนำ</div></div></li>
+                <li>
+                    <button class="menu-items-lv1" onclick="toggleMenuMobileLv2()" type="button" id="bt-menu-mobile-lv-1"><span id="categories">หมวดหมู่</span><img src="./img/arrow.svg" class="material-symbols-outlined down-left-arrow-lv1 inline" alt="..." style="transform: rotate(45deg);"></button>
+                    <ul class="menu menu-mobile-lv-2" id="menu-mobile-lv-2">
+                        <li>
+                            <button type="button" onclick="toggleMenuMobileLv3First()" id="bt-menu-mobile-lv-3-first" class="mr-3"><span id="Pellet-food">อาหารเม็ด</span><img src="./img/arrow.svg" class="material-symbols-outlined down-left-arrow-lv2 inline" alt="..." style="transform: rotate(45deg);"></button>
+                            <ul class="menu menu-mobile-lv-3" id="menu-mobile-lv-3-first">
+                                <li><div onclick="loadToPage('1to12_month')" id="1-to-12-month" class="mr-6">1 - 12 เดือน</div></li>
+                                <li><div onclick="loadToPage('1year_up_pellet')" id="1-year-up" class="mr-6">1 ปีขึ้นไป</div></li>
+                                <li><div onclick="loadToPage('7year_up_pellet')" class="7-year-up mr-6">7 ปีขึ้นไป</div></li>
+                                <li><div onclick="loadToPage('nourish_health_pellet')" class="nourish-health mr-6">บำรุงสุขภาพ</div></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <button type="button" onclick="toggleMenuMobileLv3Second()" id="bt-menu-mobile-lv-3-second" class="mr-3"><span id="wet-food">อาหารเปียก</span><img src="./img/arrow.svg" class="material-symbols-outlined down-left-arrow-lv2 inline" alt="..." style="transform: rotate(45deg);"></button>
+                            <ul class="menu menu-mobile-lv-3" id="menu-mobile-lv-3-second">
+                                <li><div onclick="loadToPage('more_than6month_wet')" class="mr-6">มากกว่า 6 เดือน</div></li>
+                                <li><div onclick="loadToPage('7year_up_wet')" class="7-year-up mr-6">7 ปีขึ้นไป</div></li>
+                                <li><div onclick="loadToPage('nourish_health_wet')" class="nourish-health mr-6">บำรุงสุขภาพ</div></li>
+                            </ul>
+                        </li>
+                        <li><div onclick="loadToPage('freeze_dried_food')" class="mr-3"><span id="freeze-dried-food">อาหารฟรีซดราย</span></div></li>
+                        <li><div onclick="loadToPage('toy')" class="mr-3"><span id="toy">ของเล่น</span></div></li>
+                        <li><div onclick="loadToPage('cat_house')" class="mr-3"><span id="cat-house">ที่อยู่อาศัย</span></div></li>
+                    </ul>
+                </li>
+                <li><div id="account" onclick="loadToPage('login')"><div class="menu-items-lv1" id="account-text">บัญชี</div></div></li>
+                <li><div id="contact" onclick="loadToPage('contact')"><div class="menu-items-lv1" id="contact-text">ติดต่อ</div></div></li>
+                <li><div id="news" onclick="loadToPage('news')"><div class="menu-items-lv1" id="news-text">ข่าวสาร</div></div></li>
+                <li><div id="promotion" onclick="loadToPage('promotion')"><div class="menu-items-lv1" id="prmotion-text">โปรโมชั่น</div></div></li>
+                <li id="buttom-menu"><div id="about-us" onclick="loadToPage('about_us')"><div class="menu-items-lv1" id="about-us-text">เกี่ยวกับเรา</div></div></li>
+                <li><div id="qAndA" onclick="loadToPage('q_and_a')"><div class="menu-items-lv1" id="qa-text">คำถามที่พบบ่อย</div></div></li>
+                <li><div id="compare_food" onclick="loadToPage('compare_food')"><div class="menu-items-lv1" id="compare_food_text">อาหารแบบไหนดี</div></div></li>
+            </ul>
+            <img src="./img/space_cat_swim.svg" alt="Space Cat Swiming" class="block mx-auto w-3/4">
+        </div>
+        
+        <!-- =============== When Click Menu for PC =============== -->
+        <div class="wrap-menu-pc fixed right-0 top-0 text-right text-xl z-10 w-full overflow-x-hidden" id="menu-pc-wrap">
+            <img src="./img/space_cat_swim.svg" alt="Space Cat Swiming" class="space_cat_swim absolute">
+            <ul class="" >
+                <li class="overflow-hidden mt-28 mr-10 p-3 cursor-pointer li-menu-items-pc" onmouseover="catSwimShow()" onmouseout="catSwimClose()">
+                    <div onclick="loadToPage('login')" class="menu-items-pc">
+                        <span class="text-8xl p-2">บัญชี</span>
+                        <i class="fa-sharp fa-regular fa-arrow-turn-down-left text-7xl ml-1 align-bottom"></i>
+                    </div>
+                </li>
+                <li class="overflow-hidden mr-10 p-3 cursor-pointer li-menu-items-pc" onmouseover="catSwimShow()" onmouseout="catSwimClose()">
+                    <div onclick="loadToPage('contact')" class="menu-items-pc">
+                        <span class="text-8xl p-2">ติดต่อ</span>
+                        <i class="fa-sharp fa-regular fa-arrow-turn-down-left text-7xl ml-1 align-bottom"></i>
+                    </div>
+                </li>
+                <li class="overflow-hidden mr-10 p-3 cursor-pointer li-menu-items-pc" onmouseover="catSwimShow()" onmouseout="catSwimClose()">
+                    <div onclick="loadToPage('news')" class="menu-items-pc">
+                        <span class="text-8xl p-2">ข่าวสาร</span>
+                        <i class="fa-sharp fa-regular fa-arrow-turn-down-left text-7xl ml-1 align-bottom"></i>
+                    </div>
+                </li>
+                <li class="overflow-hidden mr-10 p-3 cursor-pointer li-menu-items-pc" onmouseover="catSwimShow()" onmouseout="catSwimClose()">
+                    <div onclick="loadToPage('promotion')" class="menu-items-pc">
+                        <span class="text-8xl p-2">โปรโมชั่น</span>
+                        <i class="fa-sharp fa-regular fa-arrow-turn-down-left text-7xl ml-1 align-bottom"></i>
+                    </div>
+                </li>
+                <li class="overflow-hidden mr-10 p-3 cursor-pointer li-menu-items-pc" onmouseover="catSwimShow()" onmouseout="catSwimClose()">
+                    <div onclick="loadToPage('about_us')" class="menu-items-pc">
+                        <span class="text-8xl p-2">เกี่ยวกับเรา</span>
+                        <i class="fa-sharp fa-regular fa-arrow-turn-down-left text-7xl ml-1 align-bottom"></i>
+                    </div>
+                </li>
+                <li class="overflow-hidden mr-10 p-3 cursor-pointer li-menu-items-pc" onmouseover="catSwimShow()" onmouseout="catSwimClose()">
+                    <div onclick="loadToPage('q_and_a')" class="menu-items-pc">
+                        <span class="text-8xl p-2">คำถามที่พบบ่อย</span>
+                        <i class="fa-sharp fa-regular fa-arrow-turn-down-left text-7xl ml-1 align-bottom"></i>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    
+
+    <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Header ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^  -->
+
+
+    <!-- ================================================= Content ================================================= -->
+    <div id="content">
+        <!-- ================== Fallen Star ==================  -->
+        <div class="star absolute w-24 md:w-44 lg:w-60 overflow-hidden mix-blend-difference -z-10 pointer-events-none">
+            <img src="./img/Star.svg" alt="Star" class="mix-blend-difference">
+        </div>
+
+        <div id="space-cat-text-wrap" class="overflow-hidde relative">
+            <!-- ================== Cat space text ==================  -->
+            <div class="space-cat ml-4 mt-4 md:ml-8 lg:flex lg:mt-0 lg:gap-8 lg:ml-14 items-center overflow-hidden">
+                <div class="overflow-hidden blinkOpacity">
+                    <h1 class="spaceCat-h1 the brown">THE</h1>
+                </div>
+                <div class="overflow-hidden">
+                    <h1 class="spaceCat-h1 space mix-blend-difference cat">CAT</h1>
+                </div>
+                <div class="overflow-hidden">
+                    <h1 class="spaceCat-h1 mix-blend-difference space">SPACE</h1>
+                </div>
+            </div>
+            <!-- ================== Saturn ==================  -->
+            <div class="saturn absolute top-0 xl:-top-16 right-2 lg:-right-12 -z-10 overflow-hidden" id="the-saturn">
+                <img src="./img/Saturn_1.svg" alt="The Saturn" style="transform: rotate(-15deg);">
+            </div>
+        </div>
+
+        <!-- ================== line ==================  -->
+        <div class="line mx-auto mt-10"></div>
+
+        <!-- ================== 3 Cat image ==================  -->
+        <div class="food-toy-house-wrap">
+            <div class="food-toy-house grid grid-cols-1 lg:grid-cols-3 pb-10">
+                <div class="cat-image-grid mx-auto mt-10 relative overflow-hidden">
+                    <div class="cat-image cat-food w-full overflow-hidden">
+                        <img src="./img/Cat_Food.jpg" alt="Cat Food" id="parallax-image-1">
+                    </div>
+                    <div class="food_toy_house_text font-medium mx-auto absolute left-0 right-0" onclick="loadToPage('pellet_food_1');bttPop('button-food')">
+                        <img src="./img/star_pop.gif" alt="Star Pop" class="star_pop mix-blend-screen absolute" >
+                        <div class="button-food button-home rounded-full mx-auto py-3 px-4 flex justify-between items-center"  onmouseover="blurImg('parallax-image-1', 0)" onmouseout="unBlurImg('parallax-image-1', 0)" >
+                            <i class="fa-solid fa-star text-xs sm:text-lg"></i>
+                            <p class="text-center sm:text-2xl">อาหารเม็ด</p>
+                            <i class="fa-solid fa-angle-right text-sm sm:text-lg"></i>
+                        </div>  
+                    </div>
+                </div>
+                <div class="cat-image-grid mx-auto mt-10 relative overflow-hidden">
+                    <div class="cat-image w-full overflow-hidden">
+                        <img src="./img/Cat_Toys.jpg" alt="Cat Toys" id="parallax-image-2">
+                    </div>
+                    <div class="food_toy_house_text font-medium mx-auto absolute left-0 right-0 " onclick="loadToPage('toy');bttPop('button-toy')" >
+                        <img src="./img/star_pop.gif" alt="Star Pop" class="star_pop mix-blend-screen absolute">
+                        <div class="button-toy button-home rounded-full mx-auto py-3 px-4 flex justify-between items-center" onmouseover="blurImg('parallax-image-2', 1)" onmouseout="unBlurImg('parallax-image-2', 1)">
+                            <i class="fa-solid fa-star text-xs sm:text-lg"></i>
+                            <p class="text-center sm:text-2xl">ของเล่น</p>
+                            <i class="fa-solid fa-angle-right text-sm sm:text-lg"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="cat-image-grid mx-auto mt-10 relative overflow-hidden lg:col-span-1">
+                    <div class="cat-image w-full overflow-hidden">
+                        <img src="./img/Cat_house.jpg" alt="Cat House" id="parallax-image-3">
+                    </div>
+                    <div class="food_toy_house_text font-medium mx-auto absolute top-2 left-0 right-0" onclick="loadToPage('cat_house');bttPop('button-house')">
+                        <img src="./img/star_pop.gif" alt="Star Pop" class="star_pop mix-blend-screen absolute">
+                        <div class="button-house button-home rounded-full mx-auto py-3 px-4 flex justify-between items-center" onmouseover="blurImg('parallax-image-3', 2)" onmouseout="unBlurImg('parallax-image-3', 2)">
+                            <i class="fa-solid fa-star text-xs sm:text-lg"></i>
+                            <p class="text-center sm:text-2xl">ที่อยู่อาศัย</p>
+                            <i class="fa-solid fa-angle-right text-sm sm:text-lg"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================== line ==================  -->
+        <div class="relative">
+            <div class="line mx-auto absolute left-0 right-0"></div>
+        </div>
+
+        <!-- ================== Footer ==================  -->
+        <div class="footer-wrap pt-8 overflow-hidden">
+            <div class="footer relative">
+                <div class="give-space-text overflow-hidden flex justify-center items-center gap-2 md:gap-3 lg:gap-4">
+                    <h2 class="text-center targetText">give <span style="color: var(--brown);">Space</span> for your cat</h2>
+                    <div class="logo-footer targetLogo sm:mt-2 2xl:mt-4">
+                        <img src="./img/logo_black.svg" alt="The Cat Space Logo" class="w-full">
+                    </div>
+                </div>
+                
+                <div class="copyright mt-2 block sm:flex sm:justify-center sm:gap-3 lg:mt-4 2xl:gap-8">
+                    <p class="text-center">©THE CAT SPACE CO. 2023</p>
+                    <p class="text-center">TERM OF USE</p>
+                    <p class="text-center">PRIVACY POLICY</p>
+                </div>
+                
+                <div class="introduce mt-5 sm:mt-10 md:mt-14 xl:mt-20 px-14">
+                    <p class="text-center">
+                        ยินดีต้อนรับทุกท่านสู่ The cat space
+                        สถานที่สำหรับคนรักแมว และเพื่อน
+                        ของเจ้าของแมว เราเป็นร้านที่มุ่งเน้น
+                        การให้บริการ และสินค้าแมวที่ดีที่สุด
+                        เรามีสินค้าและอุปกรณ์ที่หลากหลาย
+                        คุณสามารถเลือกซื้อได้ตามต้องการของคุณ
+                        เราหวังว่า The cat space จะเป็นพื้นที่
+                        ที่คุณได้พบกับทุกสิ่งที่คุณ
+                        และแมวของคุณต้องการ 
+                    </p>
+                </div>
+
+                <img src="./img/meteor.svg" alt="Meteor" class="absolute -rotate-12 meteor -z-10">
+                <img src="./img/moon.svg" alt="Moon" class="absolute moon -z-10">
+            </div>
+
+            <div class="paws mb-14 mt-4 sm:mt-6 md:mt-8 lg:mt-16 xl:mt-20">
+                <img src="./img/paws.svg" alt="Cat Paws" class="block mx-auto w-1/12" style="min-width: 40px;">
+            </div>
+
+            <p class="text-center mb-1" style="color: var(--gray);">scroll to top</p>
+            <div class="scroll_to_top mx-auto text-center cursor-pointer" onclick="scrollToTop()">
+                <i class="fa-regular fa-angle-up"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================================================= Script ================================================= -->
+
+    <!-- =============== Script for Preloading =============== -->
+    <script src="./js/loading_page.js"></script>
+
+    <!-- =============== Script for Load to another page =============== -->
+    <script src="./js/loading_to_another_page.js"></script>
+
+    <!-- =============== Script for Mobile Menu =============== -->
+    <script src="./js/menu_mobile.js"></script>
+
+    <!-- =============== Script for PC Menu =============== -->
+    <script src="./js/menu_pc.js"></script>
+    
+    <!-- =============== Script for responsive =============== -->
+    <script src="./js/responsive.js"></script>
+
+    <!-- =============== Script for home page =============== -->
+    <script src="./js/home.js"></script>
+
+    <!-- =============== Script for footer page =============== -->
+    <script src="./js/footer.js"></script>
+    
+    <!-- =============== Set Variable Script =============== -->
+    <script type="text/javascript" src="./js/variable.js"></script>
+</body>
+</html>

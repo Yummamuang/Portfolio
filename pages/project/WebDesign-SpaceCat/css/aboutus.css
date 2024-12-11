@@ -1,0 +1,135 @@
+.box_items {
+    width: 150px;
+    height: 50px;
+    border-radius: 3rem;
+    transition: 0.3s cubic-bezier(.615 , .19, .305, .91);
+}
+
+.box_items:first-child {
+    background: var(--brown);
+}
+
+.box_items:nth-child(even) {
+    background: var(--orange);
+}
+
+.box_items:last-child {
+    background: var(--gray-light);
+}
+
+.box_items:hover {
+    background: var(--gray-light);
+}
+
+.box_items:hover .fa-star {
+    color: var(--green-light);
+}
+
+#us_story, #address, #product_and_service {
+    width: 75%;
+    max-width: 700px;
+    min-width: 200px;
+    height: 300px;
+    top: 30%;
+    left: -50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    transition: 0.3s cubic-bezier(.615 , .19, .305, .91);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.11);
+}
+
+#us_story {
+    background: var(--brown);
+}
+
+#address {
+    background: var(--green-light);
+}
+
+#product_and_service {
+    background: var(--gray-light);
+}
+
+#glass {
+    top: 0;
+    left: -100%;
+    z-index: 999;
+    height: 100vh;
+    width: 100%;
+    opacity: 0.5;
+    background: var(--gray-light);
+    opacity: 0;
+    transition: 0.3s cubic-bezier(.615 , .19, .305, .91);
+}
+
+.fa-star_heading {
+    font-size: calc(2.6vw + 1rem);
+}   
+
+.about_us_text {
+    font-size: calc(4vw + 3px);
+}
+
+
+@media (min-width: 375px) {
+    .about_us_text {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 768px) {
+    .about_us_text {
+        font-size: 24px;
+    }
+
+    .box_items {
+        width: 220px;
+        height: 120px;
+    }
+
+    .box_items p {
+        font-size: calc(20px + 0.5vw);
+    }
+
+    .box {
+        padding: 2.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .box {
+        padding-left: 15vw;
+        padding-right: 15vw;
+    }
+
+    .box_items p {
+        font-size: 25px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .box {
+        padding-left: 20vw;
+        padding-right: 20vw;
+    }
+}
+
+@media (min-width: 1536px) {
+    .box {
+        padding-left: 25vw;
+        padding-right: 25vw;
+    }
+
+    .box_items {
+        width: 250px;
+        height: 150px;
+    }
+
+    .box_items p {
+        font-size: 28px;
+    }
+
+    .fa-star_heading {
+        font-size: 50px;
+    }
+}

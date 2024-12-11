@@ -1,0 +1,30 @@
+.lr{
+    font-weight: 500;
+    font-size: calc(1rem + 6.5vw);
+}
+
+.lr i{
+    font-size: calc(1rem + 4vw);
+    transform: translateY(-2.5px);
+}
+
+.submit_lr:hover > .fa-angle-right{
+    animation: angle_right_animate 2s ease infinite;
+}
+
+input[type=text]{
+    width: calc(3rem + 50vw);
+    max-width: 380px;
+    border-radius: 999rem;
+    background: var(--dark-gray);
+    color: var(--white);
+}
+
+@media (min-width:768px){
+    .lr{
+        font-size: 60px;
+    }
+    .lr i{
+        font-size: 45px;
+    }
+}
