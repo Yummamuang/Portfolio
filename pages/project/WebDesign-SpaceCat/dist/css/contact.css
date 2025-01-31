@@ -1,0 +1,120 @@
+.ufo {
+    max-width: 800px;
+    min-width: 400px;
+    opacity: 0;
+    transform: rotate(-15deg);
+    transition: 2s cubic-bezier(.615 , .19, .305, .91);
+    animation: ufoMove 40s ease infinite 2s;
+    overflow: hidden;
+}
+
+.ufo img {
+    width: 40vw;
+}
+
+@keyframes ufoMove {
+    0% {
+        opacity: 0;
+        transform: translate(0,0);
+    }
+    
+    2% {
+        opacity: 1;
+    }
+
+    30% {
+        transform: translate(-150%,150%);
+    }   
+
+    60% {
+        transform: translate(-250%,0);
+    }
+
+    90% {
+        opacity: 1;
+        transform: translate(150%,150%);
+    }
+
+    100% {
+        transform: translate(50%,0);
+    }
+}
+
+.chat_with_officer {
+    min-width: 220px;
+    transition: 0.4s cubic-bezier(.615 , .19, .305, .91);
+    animation: cat_space_with_headphone_move 6s cubic-bezier(.615 , .19, .305, .91) infinite 0.5s;
+}
+
+.cat_space_with_headphone {
+    animation: cat_space_with_headphone_move 6s cubic-bezier(.615 , .19, .305, .91) infinite;
+    transition: 0.4s cubic-bezier(.615 , .19, .305, .91);
+}
+
+@keyframes cat_space_with_headphone_move {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(15%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+#chat_with_officer_button {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.24);
+    width: 175px;
+    background: var(--green-light);
+    padding: 0.5rem 1rem;
+    border-radius: 999rem;
+    transition: 0.3s cubic-bezier(.615 , .19, .305, .91);
+}
+
+#chat_with_officer_button:hover{
+    background: var(--gray-light);
+    color: var(--black);
+}
+
+#chat_with_officer_button:hover > .fa-angle-right{
+    animation: angle_right_animate 2s ease infinite;
+}
+
+#chat {
+    transition: 0.3s cubic-bezier(.615 , .19, .305, .91);
+}
+
+.fa-circle-xmark {
+    transition: 0.3s cubic-bezier(.615 , .19, .305, .91);
+}
+
+#type_chat {
+    background: var(--dark-gray);
+    width: 100%;
+}
+
+button[type=submit].submit_chat_massage {
+    min-width: 70px;
+    max-width: 120px;
+    background: var(--green-light);
+    border-radius: 999rem;
+    font-weight: 500;
+    max-width: 380px;
+    transition: 0.3s cubic-bezier(.615 , .19, .305, .91);
+}
+
+button[type=submit].submit_chat_massage:hover{
+    background: var(--gray-light);
+    color: var(--black);
+}
+
+button[type=submit].submit_chat_massage:hover > .fa-angle-right{
+    animation: angle_right_animate 2s ease infinite;
+}
+
+
+input[type=text]{
+    width: 80%;
+    color: var(--white);
+}

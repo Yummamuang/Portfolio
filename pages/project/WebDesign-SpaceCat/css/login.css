@@ -1,0 +1,33 @@
+.lr{
+  font-weight: 500;
+  font-size: calc(1rem + 10vw);
+  
+}
+
+.lr i{
+  font-size: calc(1rem + 6vw);
+  transform: translateY(-2.5px);
+
+}
+
+.submit_lr:hover > .fa-angle-right{
+  animation: angle_right_animate 2s ease infinite;
+}
+
+input[type=text]{
+  width: calc(3rem + 50vw);
+  max-width: 380px;
+  border-radius: 999rem;
+  background: var(--dark-gray);
+  color: var(--white);
+}
+
+#contact_us_text_area {
+  width: calc(3rem + 50vw);
+  height: 260px;
+  max-width: 380px;
+  border-radius: 30px;
+  outline: none;
+  background: var(--dark-gray);
+  color: var(--white);
+}

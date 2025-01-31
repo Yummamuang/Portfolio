@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="../css/lab.css">
+    <link rel="stylesheet" href="../css/project.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <div id="preloader">
+        <div class="ym_logo" id="inner_preloader">
+            <h2>Y</h2>
+            <h2>M</h2>
+            <h2>.</h2>
+        </div>
+    </div>
+    
+    <div class="nav">
+        <h1 class="logo"><a href="./home.html" class="position_fixed top_0">YM.</a></h1>
+
+        <div id="hamgurger_menu" onclick="toggleMenuMobile()">
+            <div class="position_fixed hamburger_line_wrap">
+                <div class="relative">
+                    <span id="l1"></span>
+                    <span id="l2"></span>
+                    <span id="l3"></span>
+                </div>
+            </div>
+        </div>
+
+        <ul class="menu">
+            <li><a href="./home.html">Home</a></li>
+            <li><a href="./lab.html">Lab</a></li>
+            <li><a href="./project.html">Project</a></li>
+            <li><a href="./about.html">About me</a></li>
+        </ul>
+
+        <div class="relative overflow-hid ">
+            <div id="menu_mobile" class="height100vh">
+                <div><a href="./home.html">Home</a></div>
+                <div><a href="./lab.html">Lab</a></div>
+                <div><a href="./project.html">Project</a></div>
+                <div><a href="./about.html">About me</a></div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="content">
+        <div class="topic-text overflow-hid">
+            <h1>Project</h1>
+        </div>
+        
+        
+        <div class="my-thrid-project">
+            <div class="lab">
+                <a href="./project/WebDesign-SpaceCat/index.html" target="_blank">
+                    <div class="fav-lab black">
+                        <video width="110%" autoplay loop muted>
+                            <source src="../video/catspace.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </a>
+                <div>
+                    <p class="fav-project-text">Cat Space Shop Website Design</p>
+                </div>
+            </div>
+            <div class="lab">
+                <a href="https://manga-system.vercel.app/" target="_blank">
+                    <div class="fav-lab webdesign">
+                        <img src="../img/manga-direct.png" alt="">
+                    </div>
+                </a>
+                <div>
+                    <p class="fav-project-text">Manga Recommendation Website (Desktop only)</p>
+                </div>
+            </div>
+            <div class="lab">
+                <a href="https://github.com/Yummamuang/Snake-Game-Development" target="_blank">
+                    <div class="fav-lab webdesign">
+                        <img src="../img/snakegame.jpg" alt="">
+                    </div>
+                </a>
+                <div>
+                    <p class="fav-project-text">Snake Game With Python (Github)</p>
+                </div>
+            </div>
+            <div class="lab">
+                <a href="https://github.com/Yummamuang/Gym-Management-System" target="_blank">
+                    <div class="fav-lab webdesign">
+                        <img src="../img/gymmanagementsystem.png" alt="">
+                    </div>
+                </a>
+                <div>
+                    <p class="fav-project-text">Gym Management System With Laravel Framework (Github)</p>
+                </div>
+            </div>
+            <div class="lab data-en">
+                <a href="https://github.com/Yummamuang/Data-Engineering-Mini-Project" target="_blank">
+                    <div class="fav-lab webdesign">
+                        <img src="../img/dataengineering.jpg" alt="">
+                    </div>
+                </a>
+                <div>
+                    <p class="fav-project-text">Mini Project Comparison of View Counts for the Top 15 Popular Games on Streaming Platforms: YouTube, Twitch, and Facebook (Github)</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="cursor"></div>
+
+    <script src="../js/load.js"></script>
+    <script src="../js/menu_mobile.js"></script>
+    <script src="../js/cursor.js"></script>
+</body>
+</html>

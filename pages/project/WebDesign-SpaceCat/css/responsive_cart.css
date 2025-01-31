@@ -1,0 +1,9 @@
+.fa-cart-shopping {
+    top: -9px;
+}
+
+@media (min-width: 1024px) {
+    .fa-cart-shopping {
+        top: 21px;
+    }
+}

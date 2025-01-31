@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="../css/lasson.css">
+    <link rel="stylesheet" href="../css/about.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <div id="preloader">
+        <div class="ym_logo" id="inner_preloader">
+            <h2>Y</h2>
+            <h2>M</h2>
+            <h2>.</h2>
+        </div>
+    </div>
+
+    <div class="nav">
+        <h1 class="logo"><a href="./home.html" class="position_fixed top_0">YM.</a></h1>
+
+        <div id="hamgurger_menu" onclick="toggleMenuMobile()">
+            <div class="position_fixed hamburger_line_wrap">
+                <div class="relative">
+                    <span id="l1"></span>
+                    <span id="l2"></span>
+                    <span id="l3"></span>
+                </div>
+            </div>
+        </div>
+
+        <ul class="menu">
+            <li><a href="./home.html">Home</a></li>
+            <li><a href="./lab.html">Lab</a></li>
+            <li><a href="./project.html">Project</a></li>
+            <li><a href="./about.html">About me</a></li>
+        </ul>
+
+        <div class="relative overflow-hid ">
+            <div id="menu_mobile" class="height100vh">
+                <div><a href="./home.html">Home</a></div>
+                <div><a href="./lab.html">Lab</a></div>
+                <div><a href="./project.html">Project</a></div>
+                <div><a href="./about.html">About me</a></div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="content">
+        <div class="topic-text overflow-hid">
+            <h1>About Me?</h1>
+        </div>
+        
+        <div class="about_me">
+            <div class="about_me_image overflow-hid">
+                <img src="../img/my_pic.jpg" alt="My Profiles Picture">
+            </div>
+            <p>
+                Hi, I'm Panatakorn Supak, a passionate Computer Science student at Khon Kaen University specializing in Full-Stack Development.<br>
+                I thrive on creating user-focused and efficient digital solutions, blending clean frontend designs with robust backend systems. <br>
+                With expertise in React, Node.js, and modern web technologies, I aim to bring impactful ideas to life through coding. <br>
+                My goal is to build innovative software that enhances user experiences and solves real-world problems. <br>
+                Let's connect and create something amazing together! <br><br>
+                <a href="mailto:Panatakorn.s@kkumail.com">Panatakorn.s@kkumail.com</a>
+                or
+                <a href="https://github.com/Yummamuang" target="_blank">Github</a>
+            </p>
+        </div>
+        
+    </div>
+    <div id="cursor"></div>
+    <script src="../js/load.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="../js/menu_mobile.js"></script>
+    <script src="../js/cursor.js"></script>
+</body>
+</html>

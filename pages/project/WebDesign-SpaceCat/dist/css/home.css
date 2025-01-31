@@ -1,0 +1,423 @@
+
+/* <========================== Home page ========================== > */
+body {
+    background: white;
+}
+
+/* <============= Space cat Text ============= > */
+#space-cat-text-wrap {
+    height: 210px;
+}
+
+.space-cat h1 {
+    font-family: 'Readex Pro', sans-serif;
+    font-weight: 600;
+    font-size: 10.5vw;
+}
+
+.space-cat {
+    color: var(--white);
+}
+
+.brown {
+    color: var(--brown);
+}
+
+.space-cat {
+    height: inherit;
+}
+
+.spaceCat-h1 {
+    transform: translateY(150%);
+    transition: 0.4s cubic-bezier(.615 , .19, .305, .91);
+}
+
+.spaceCat-h1-ani {
+    animation: SpaceCatMoveUp 0.4s cubic-bezier(.615 , .19, .305, .91) forwards;
+}
+
+.blinkOpacity {
+    color: var(--black);
+    animation: blinkOpacity 2.5s cubic-bezier(.615 , .19, .305, .91) infinite;
+}
+
+.space {
+    animation-delay: 0.2s;
+}
+
+.cat {
+    animation-delay: 0.1s;
+}
+
+.saturn {
+    max-width: 1200px;
+    opacity: 1;
+    transform: rotate(-15deg);
+    transition: 2s cubic-bezier(.615 , .19, .305, .91);
+    animation: saturnMove 10s cubic-bezier(.615 , .19, .305, .91) infinite;
+}
+
+.saturn img {
+    width: 60vw;
+}
+
+.star {
+    animation: fallenStar 15s linear infinite 1s;
+}
+
+.star {
+    transform: translate(15rem,-10rem);
+}
+
+@keyframes fallenStar {
+    0% {
+        transform: translate(15rem,-10rem);
+    }
+    100% {
+        transform: translate(-10rem,10rem);
+    }
+}
+
+
+.star img{
+    transform: rotate(10deg);
+}
+
+@keyframes SpaceCatMoveUp {
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes saturnMove {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(5vw);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes blinkOpacity {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 0;
+    }
+    60% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+/* <============= 3 photo cat ============= > */
+
+.button-home {
+    width: 85%;
+    transition: 0.2s ease-in;
+    cursor: pointer;
+    color: var(--black);
+    z-index: 2;
+}
+
+.button-food {
+    background: var(--brown);
+}
+
+.button-toy {
+    background: var(--orange);
+}
+
+.button-house {
+    background: var(--gray-light);
+}
+
+.cat-image {
+    height: 300px;
+}
+
+.food_toy_house_text {
+    top: calc(5rem);
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.for-cat {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+
+/* <============= 3 photo cat parallax ============= > */
+#parallax-image-1, #parallax-image-2, #parallax-image-3, #parallax-image-3v2{
+    transition: filter 0.4s cubic-bezier(.615 , .19, .305, .91);
+}
+
+/* <============= width image 3 cat photo ============= > */
+.cat-image-grid {
+    width: 80%;
+}
+
+/* <============= star on button ============= > */
+.fa-star {
+    transition: 0.2s cubic-bezier(.615 , .19, .305, .91);
+}
+
+.star_pop {
+    display: none;
+    top: -200%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: 0.2s cubic-bezier(.615 , .19, .305, .91);
+}
+
+
+/* <============= Popup logo Class ============= > */
+.animate-give-space-text {
+    animation: SpaceCatMoveUp 0.4s cubic-bezier(.615 , .19, .305, .91) forwards;
+}
+
+.animate-footer-logo {
+    animation: popup 0.6s cubic-bezier(.615 , .19, .305, .91) forwards;
+}
+
+/* <============= Popup logo Keyframe ============= > */
+@keyframes popup {
+    50% {
+        transform: scale(1.125);
+
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* <============= Responsive ============= > */
+@media (min-width: 375px) {
+
+   #space-cat-text-wrap {
+       height: 340px;
+   }
+   
+   .star {
+       transform: translate(15rem,-10rem);
+   }
+
+   @keyframes fallenStar {
+       0% {
+           transform: translate(15rem,-10rem);
+       }
+       100% {
+           transform: translate(-10rem,20rem);
+       }
+   }
+}
+
+@media (min-width: 640px) {
+   /* <============= space cat wrap height ============= > */
+   #space-cat-text-wrap {
+       height: 420px;
+   }
+
+   .star {
+       transform: translate(35rem,-20rem);
+   }
+
+   @keyframes fallenStar {
+       0% {
+           transform: translate(35rem,-20rem);
+       }
+       100% {
+           transform: translate(-20rem,30rem);
+       }
+   }
+
+   /* <============= 3 cat photo ============= > */
+   .cat-image {
+       height: 650px;
+   }
+}   
+
+@media (min-width: 768px) {
+
+   /* <============= space cat wrap height ============= > */
+   #space-cat-text-wrap {
+       height: 530px;
+   }
+
+   .star {
+       transform: translate(35rem,-20rem);
+   }
+
+   @keyframes fallenStar {
+       0% {
+           transform: translate(35rem,-20rem);
+       }
+       100% {
+           transform: translate(-20rem,30rem);
+       }
+   }
+
+   /* <============= 3 cat photo ============= > */
+
+   #parallax-image-1 {
+       transform: translateY(0);
+   }
+
+   #parallax-image-3v2 {
+       transform: scale(1.2);
+       transform: translateY(-20px);
+   }
+
+   .cat-image {
+       height: 800px;
+   }
+
+   .cat-image:nth-child(3) {
+       height: 430px;
+   }
+}
+
+
+@media (min-width: 1024px) {
+   /* <============= space cat wrap height ============= > */
+   #space-cat-text-wrap {
+       height: 650px;
+   }
+   
+   /* <============= Cat space text ============= > */
+   .space-cat h1 {
+       font-size: 10vw;
+   }
+
+   .star {
+       transform: translate(50rem,-20rem);
+   }
+
+   @keyframes fallenStar {
+       0% {
+           transform: translate(50rem,-20rem);
+       }
+       100% {
+           transform: translate(-20rem,35rem);
+       }
+   }
+
+   /* <============= 3 cat photo ============= > */
+   .cat-image {
+       height: 430px;
+   }
+
+   /* <============= 3 cat photo button ============= > */
+   .button-home {
+       padding: 0.8rem 1.5rem;
+   }
+
+   .button-home:hover {
+       transform: scale(1.05);
+       background: var(--white);
+       color: var(--dark-gray);
+       transition: 0.3s cubic-bezier(.615 , .19, .305, .91);
+   }
+
+    .button-home:hover > .fa-star{
+        color: var(--green-light);
+    }
+
+    .button-home:hover > .fa-angle-right{
+        animation: angle_right_animate 2s ease infinite;
+    }
+
+    /* <============= fa-angle-right animation ============= > */
+    @keyframes angle_right_animate {
+        0% {
+            transform: translateX(0);
+        }
+        50% {
+            transform: translateX(10px);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+}
+
+
+@media (min-width: 1280px) {
+
+   /* <============= space cat wrap height ============= > */
+   #space-cat-text-wrap {
+       height: 800px;
+   }
+
+   .star {
+       transform: translate(90rem,-25rem);
+   }
+
+   @keyframes fallenStar {
+       0% {
+           transform: translate(90rem,-25rem);
+       }
+       100% {
+           transform: translate(-20rem,40rem);
+       }
+   }
+
+   /* <============= 3 cat photo ============= > */
+   .cat-image {
+       height: 500px;
+   }
+
+   /* <============= 3 cat photo star pop ============= > */
+   .star_pop {
+        top: -250%;
+    }
+}
+
+
+/* <============= Responsive for home page ============= > */
+@media (min-width: 1536px) {
+   /* <============= space cat wrap height ============= > */
+   #space-cat-text-wrap {
+       height: 900px;
+   }
+
+   /* <============= 3 cat photo ============= > */
+   .cat-image {
+       height: 550px;
+   }
+
+   /* <============= 3 cat photo star pop ============= > */
+   .star_pop {
+        top: -300%;
+    }
+}
+
+@media (min-width: 1800px) {
+   /* <============= space cat wrap height ============= > */
+    #space-cat-text-wrap {
+        min-height: 1050px;
+        height: calc(1000px + 20vw);
+    }
+
+   /* <============= 3 cat photo ============= > */
+   .cat-image {
+       height: 620px;
+   }
+
+   /* <============= 3 cat photo star pop ============= > */
+   .star_pop {
+     top: -350%;
+    }
+}

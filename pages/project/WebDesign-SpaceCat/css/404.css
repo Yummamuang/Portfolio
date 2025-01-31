@@ -1,0 +1,67 @@
+/* <============= Error page ============= > */
+.text-oops {
+    color: var(--gray);
+}
+
+.text {
+    font-family: 'Readex Pro', sans-serif;
+    font-weight: 500;
+}
+
+.wrap-404-error {
+    margin-top: 2rem;
+    height: 80vh;
+    background: var(--gray-light);
+}
+
+.text-404-wrap {
+    animation: slideLeftSlow404 45s linear infinite;
+}
+
+.error-text-wrap {
+    animation: slideLeftSlowText 30s linear infinite;
+}
+
+/* <============= Animation in Error page ============= > */
+@keyframes slideLeftSlow404 {
+    0%{
+        transform: translateX(120%);
+        -webkit-transform: translateX(120%);
+        -moz-transform: translateX(120%);
+        -o-transform: translateX(120%);
+    }
+    100%{
+        transform: translateX(-500%);
+        -webkit-transform: translateX(-500%);
+        -moz-transform: translateX(-500%);
+        -o-transform: translateX(-500%);
+    }
+}
+
+
+@keyframes slideLeftSlowText{
+    0%{
+        transform: translateX(120%);
+        -webkit-transform: translateX(120%);
+        -moz-transform: translateX(120%);
+        -o-transform: translateX(120%);
+    }
+    100%{
+        transform: translateX(-600%);
+        -webkit-transform: translateX(-600%);
+        -moz-transform: translateX(-600%);
+        -o-transform: translateX(-600%);
+    }
+}
+
+
+/* <============= Back to Home button ============= > */
+#bt-back-home {
+    border: none;
+    background-color: var(--gray);
+    color: var(--white);
+    transition: 0.3s cubic-bezier(.615 , .19, .305, .91);
+    -webkit-transition: 0.3s cubic-bezier(.615 , .19, .305, .91);
+    -moz-transition: 0.3s cubic-bezier(.615 , .19, .305, .91);
+    -o-transition: 0.3s cubic-bezier(.615 , .19, .305, .91);
+}
