@@ -53,6 +53,7 @@ img{
     font-size: calc(0.9rem + 3vw);
     font-weight: 500;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .view-lab{
